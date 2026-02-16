@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+  --surface: #0f0f0f;
+  --surface-highlight: #1a1a1a;
+  --border: #222222;
+  --secondary: #a0a0a0;
+  --accent: #333333;
+}
+
+.theme-midnight {
+  --background: #020617;
+  --surface: #0f172a;
+  --surface-highlight: #1e293b;
+  --border: #334155;
+  --accent: #2563eb;
+}
+
+.theme-deep-space {
+  --background: #000000;
+  --surface: #050505;
+  --surface-highlight: #0a0a0a;
+  --border: #111111;
+  --accent: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-highlight: var(--surface-highlight);
+  --color-border: var(--border);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  --font-sans: "Inter", var(--font-geist-sans);
+
+  --animate-spin-slow: spin 8s linear infinite;
+  --animate-pulse-subtle: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #252525;
+}
+.sp-wrapper,
+.sp-layout,
+.sp-stack,
+.sp-preview,
+.sp-preview-container {
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+.sp-preview iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
